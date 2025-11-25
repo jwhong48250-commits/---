@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>스도쿠 — 완전판</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>스도쿠</h1>
+        <div class="controls-top">
+          <label for="difficulty">난이도</label>
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="normal" selected>Normal</option>
+            <option value="hard">Hard</option>
+          </select>
+
+          <button id="newBtn" class="btn primary">새 퍼즐</button>
+          <button id="hintBtn" class="btn">힌트</button>
+          <button id="checkBtn" class="btn">오답 체크</button>
+        </div>
+      </header>
+
+      <main class="main">
+        <aside class="sidebar">
+          <div class="panel">
+            <div class="label">타이머</div>
+            <div id="timer" class="timer">00:00</div>
+            <div class="small-row">
+              <button id="startBtn" class="btn small">시작</button>
+              <button id="pauseBtn" class="btn small">일시정지</button>
+              <button id="resetBtn" class="btn small">리셋</button>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="label">저장 / 불러오기</div>
+            <div class="small-row">
+              <button id="saveBtn" class="btn">저장</button>
+              <button id="loadBtn" class="btn">불러오기</button>
+              <button id="clearSaveBtn" class="btn">저장삭제</button>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="label">옵션</div>
+            <label
+              ><input id="autoHighlightWrong" type="checkbox" /> 오답
+              자동하이라이트</label
+            >
+            <label
+              ><input id="animateCells" type="checkbox" checked />
+              애니메이션</label
+            >
+          </div>
+
+          <div class="panel small-info">
+            <div>힌트는 남은 빈칸 중 하나를 채워줍니다.</div>
+            <div>저장하면 로컬스토리지에 현재 퍼즐/입력/시간이 저장됩니다.</div>
+          </div>
+        </aside>
+
+        <section class="board-wrap">
+          <div id="sudoku" class="board" aria-label="sudoku board"></div>
+
+          <div class="num-row">
+            <button class="num-btn" data-num="1">1</button>
+            <button class="num-btn" data-num="2">2</button>
+            <button class="num-btn" data-num="3">3</button>
+            <button class="num-btn" data-num="4">4</button>
+            <button class="num-btn" data-num="5">5</button>
+            <button class="num-btn" data-num="6">6</button>
+            <button class="num-btn" data-num="7">7</button>
+            <button class="num-btn" data-num="8">8</button>
+            <button class="num-btn" data-num="9">9</button>
+            <button id="eraseBtn" class="num-btn">지우기</button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>완성되면 자동으로 축하 메시지가 표시됩니다. • 제작자: 돼지</div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
